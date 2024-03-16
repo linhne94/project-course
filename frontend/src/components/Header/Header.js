@@ -10,7 +10,7 @@ function Header() {
     const [bg, setBg] = useState(false)
     const [mobileNav, setMobileNav] = useState(false)
     const [btnColor, setBtnColor] = useState(false)
-    const [loginSuccess, setLogginSuccess] = useState(false)
+    const [loginSuccess, setLogginSuccess] = useState(true)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -50,7 +50,16 @@ function Header() {
                         })}
                     </ul>
                 </nav>
-                {loginSuccess ? <UserManage /> : <Link to="/signin" className={`${btnColor ? 'bg-[#04ddb2] hover:bg-[#03ecbe] text-white ' : 'bg-[#eef0f2] hover:bg-grey-1 text-second'}  px-[40px] py-[9px] my-1 hover:transform-[scale3d(1.05,1.05,1.05)] text-sm font-semibold  rounded-full  backdrop-blur-md transition  transform hover:scale-105 hidden md:flex`}>Login</Link>}
+                {
+                    loginSuccess ? <UserManage />
+                        : <Link to="/signin"
+                            className={`${btnColor ? 'bg-[#04ddb2] hover:bg-[#03ecbe] text-white ' : 'bg-[#eef0f2] hover:bg-grey-1 text-second'}  
+                                    px-[40px] py-[9px] my-1 hover:transform-[scale3d(1.05,1.05,1.05)] text-sm font-semibold  
+                                    rounded-full  backdrop-blur-md transition  transform hover:scale-105 hidden md:flex`}
+                        >
+                            Login
+                        </Link>
+                }
 
 
                 <div className={`${mobileNav ? ' top-[64px]' : 'bottom-full'} md:hidden h-[550px] fixed left-0 w-full max-w-full backdrop-blur-lg bg-white/60 transition-all shadow-lg border-t-[1px] custom-nav-mobile `}>

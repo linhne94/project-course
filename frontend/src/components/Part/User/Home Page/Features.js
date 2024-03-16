@@ -2,7 +2,10 @@ import React from "react";
 import { features } from "../../../../data/data";
 import './style.css'
 function Features() {
+
   const { name, title, items } = features;
+
+
   return <section className="section text-center bg-gray-100">
     <div className="container mx-auto">
       <div>

@@ -258,5 +258,5 @@ export const menuUserItems = [
     { text: 'My Blog', link: '#' },
     { text: 'Saved Blogs', link: '#' },
     { text: 'Log Out', link: '#' }
-  ];
-   
+];
+

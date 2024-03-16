@@ -1,5 +1,5 @@
 import React from "react";
-import { features } from "../../../data/data";
+import { features } from "../../../../data/data";
 import './style.css'
 function Features() {
   const { name, title, items } = features;

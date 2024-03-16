@@ -1,14 +1,14 @@
 import React from "react";
-import Hero from "../components/Part/User/Hero";
+import Hero from "../components/Part/User/Home Page/Hero";
 import Header from "../components/Header/Header";
-import Features from "../components/Part/User/Features";
-import CollectionCourse from "../components/Part/User/CollectionCourse";
-import Product from "../components/Part/User/Course";
+import Features from "../components/Part/User/Home Page/Features";
+import CollectionCourse from "../components/Part/User/Home Page/CollectionCourse";
+import Product from "../components/Part/User/Home Page/Course";
 import Footer from "../components/Footer/Footer";
 
 function HomePage() {
   return <>
-    <div className='w-full max-w-[1440px] m-auto bg-white'>
+    <div className='w-full m-auto bg-white'>
       <Header />
       <Hero />
       <Features />

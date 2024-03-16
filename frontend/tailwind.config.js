@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     fontFamily: {
       primary: 'Saira',
-      secondary: 'Poppins'
+      secondary: 'Poppins',
+      logoTitle: 'Saira Stencil One'
     },
     container: {
       padding: {
@@ -21,6 +22,7 @@ module.exports = {
       colors: {
         primary: '#04ddb2',
         second: '#23262F',
+        third: '#00457c',
         accent: '#286F6C',
         grey: {
           DEFAULT: '#919297',

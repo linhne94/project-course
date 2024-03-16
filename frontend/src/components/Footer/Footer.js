@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from '../../assets/svgexport-1.svg'
+import Logo from '../../assets/images/logo.png'
 import { footer } from "../../data/data";
 import { HiOutlineChevronRight } from "react-icons/hi";
 import './footer.css'
@@ -9,7 +9,7 @@ const Footer = () => {
     <div className='container mx-auto'>
       <div className="flex flex-col gap-y-8 lg:flex-row lg:gap-x-20 pb-12 border-b border-black ">
         <div className="mb-5">
-          <img src={Logo} className="w-28 lg:w-36" alt="" />
+          <img src={Logo} className="w-32 lg:w-48" alt="" />
         </div>
         <div className="flex flex-row w-full lg:w-[50%]" >
           <div className="flex-grow">

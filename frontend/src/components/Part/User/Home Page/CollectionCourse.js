@@ -1,5 +1,5 @@
 import React from "react";
-import { collectionCourse } from "../../../data/data";
+import { collectionCourse } from "../../../../data/data";
 import './style.css'
 import CollectionSlide from "./CollectionSlide";
 function CollectionCourse() {

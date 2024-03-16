@@ -1,5 +1,5 @@
 import React from "react";
-import { product } from "../../../data/data";
+import { product } from "../../../../data/data";
 function CoursePro() {
     const { titlePro, subtitlePro, coursePro } = product
 
@@ -14,7 +14,7 @@ function CoursePro() {
         <div className="container mt-4">
             <div className="grid justify-items-center grid-cols-1 gap-y-10 sm:grid-cols-2  lg:grid-cols-3 ">
                 {coursePro.map((item, index) => {
-                    return <div key={index} className="flex flex-col shadow-md rounded-lg w-[90%] course-item hover:shadow-lg">
+                    return <div key={index} className="cursor-pointer flex flex-col border fea-item border-gray-300 rounded-2xl w-[90%] course-item hover:shadow-lg">
                         <div className="rounded-t-lg ">
                             <img class="object-cover rounded-t-lg w-full h-auto" src={item.image.type} alt="" />
                         </div>
@@ -30,6 +30,6 @@ function CoursePro() {
                 })}
             </div>
         </div>
- </div>
+    </div>
 }
 export default CoursePro;

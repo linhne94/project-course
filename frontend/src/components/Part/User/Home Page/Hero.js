@@ -1,9 +1,9 @@
 import React from "react";
 
-import { hero } from '../../../data/data';
+import { hero } from '../../../../data/data';
 function Hero() {
     const { title1, title2, subtitle, buttonText, heroImg } = hero
-    return <section className=" lg:py-[120px] py-[100px] lg:bg-center flex ">
+    return <section className=" lg:pt-[100px] py-[100px] lg:bg-center flex ">
         <div className="container mx-auto">
             <div className="flex items-center flex-col lg:flex-row lg:gap-x-[60px]">
                 <div className="flex-1 mt-8 lg:min-w-[620px] text-center lg:text-left order-1 lg:-order-1">
@@ -12,8 +12,8 @@ function Hero() {
                     <h2 className="my-[20px] text-lg">{subtitle}</h2>
                     <button className="bg-[#04ddb2] hover:bg-[#03ecbe] px-[36px] py-[18px] mt-[10px] hover:transform-[scale3d(1.05,1.05,1.05)] text-xl font-semibold text-white rounded-[32px]  backdrop-blur-md transition  transform hover:scale-105">{buttonText}</button>
                 </div>
-                <div className="flex-1 ">
-                    <img src={heroImg.type} alt="" />
+                <div className="flex-1 flex justify-center items-center ">
+                    <img src={heroImg.type} className="lg:h-[80%] lg:w-[90%] xl:w-[70%] w-[40%] h-[30%] " alt="" />
                 </div>
             </div>
         </div>

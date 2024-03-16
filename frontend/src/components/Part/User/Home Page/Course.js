@@ -1,5 +1,5 @@
 import React from "react";
-import { product } from "../../../data/data";
+import { product } from "../../../../data/data";
 import ProductPro from "./CoursePro";
 import ProductNor from "./CourseNor";
 

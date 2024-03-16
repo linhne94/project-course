@@ -4,11 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import '../../../../src/slider.css'
+import '../../../../slider.css'
 // import required modules
 import { Navigation, Pagination } from 'swiper'
 // import data
-import { collectionCourse } from "../../../data/data";
+import { collectionCourse } from "../../../../data/data";
 //import icons
 import { HiPlus } from "react-icons/hi";
 

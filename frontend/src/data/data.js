@@ -9,7 +9,8 @@ import {
 
 } from 'react-icons/io';
 //IMAGE
-import HeroImg from '../assets/images/features-2.png'
+import HeroImg from '../assets/images/logo34.jpg'
+import HaftHero from '../assets/images/haftHero.jpg'
 import SoftWareImg from '../assets/images/software.jpg'
 import SafetyImg from '../assets/images/safety.jpg'
 import DesignImg from '../assets/images/design.jpg'
@@ -34,7 +35,7 @@ export const hero = {
     title2: 'Through Knowledge',
     subtitle: ' Expand Your Horizons and Transform Your Future with Brainity\'s Comprehensive Online Learning Platform',
     buttonText: 'Learn Now',
-    heroImg: <HeroImg />
+    heroImg: <HaftHero />
 }
 
 export const navigation = [
@@ -222,3 +223,40 @@ export const footer = {
         ]
     }
 };
+
+export const dataCourse = {
+    course:
+        [
+            {
+                id: 1,
+                name: 'Fullstack Course',
+                description: 'A Full Path for Developers who wants to be Fullstack',
+                category: 'Technology',
+                image: <HtmlImg />,
+                isConfirmed: false,
+                isFree: false,
+                price: 1800000,
+                videos: ['Introduction to Fullstack', 'Building Frontend with React', 'Backend with Node.js'],
+            },
+            {
+                id: 1,
+                name: 'Fullstack Course',
+                description: 'A Full Path for Developers who wants to be Fullstack',
+                category: 'Technology',
+                image: <HtmlImg />,
+                isConfirmed: false,
+                isFree: false,
+                price: 1800000,
+                videos: ['Introduction to Fullstack', 'Building Frontend with React', 'Backend with Node.js'],
+            }
+        ]
+}
+
+export const menuUserItems = [
+    { text: 'Profile', link: '#' },
+    { text: 'Write Blog', link: '#' },
+    { text: 'My Blog', link: '#' },
+    { text: 'Saved Blogs', link: '#' },
+    { text: 'Log Out', link: '#' }
+  ];
+   

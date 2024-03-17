@@ -15,7 +15,10 @@ import Profile from "./components/Part/Profile/Profile";
 import Info from "./components/Part/Course/Info";
 import LoginRegister from './pages/Register Login/LoginRegister';
 import LearningPage from "./pages/LearningPage"
-
+import TeacherManagePage from './components/Part/Teacher/Manage Course Page/TeacherManagePage';
+import AddCoursePage from './components/Part/Teacher/Manage Course Page/AddCourse'
+import PreviewCoursePage from './components/Part/Teacher/Manage Course Page/Preview'
+import ProfileTeacherPage from './components/Part/Profile Teacher Admin/TeacherProfile'
 
 function App() {
   return (<>
@@ -32,7 +35,15 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/collection/:id" element={<Info />} />
       <Route path="/collection" element={<CollectionPage />} />
-      <Route path="blog" element={<LearningPage />} />
+      <Route path="/learningpage" element={<LearningPage />} />
+
+      {/* TEACHER ROUTER */}
+      <Route path="teacherpage" element={<TeacherManagePage />} />
+      <Route path="addcourse" element={<AddCoursePage />} />
+      <Route path="previewcourse/:id" element={<PreviewCoursePage />} />
+      <Route path="profileTeacher" element={<ProfileTeacherPage />} />
+
+
     </Routes>
   </>)
 }

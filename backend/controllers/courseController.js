@@ -92,6 +92,46 @@ const getFeaturedCourse = async (req, res) => {
     }
 }
 
+const getFreeCourse = async (req, res) => {
+
+    try {
+        const getFreeCourse = await Course.find({ isFree: true })
+            .populate('categories')
+            .limit(6)
+
+        res.status(200).json({
+            success: true,
+            message: "Successfully",
+            data: getFreeCourse
+        })
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Failed. Try again"
+        })
+    }
+}
+
+const getProCourse = async (req, res) => {
+
+    try {
+        const getProCourse = await Course.find({ isFree: false })
+            .populate('categories')
+            .limit(6)
+
+        res.status(200).json({
+            success: true,
+            message: "Successfully",
+            data: getProCourse
+        })
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Failed. Try again"
+        })
+    }
+}
+
 const getCourseBySearch = async (req, res) => {
     const search = new RegExp(req.query.city, 'i');
 
@@ -175,5 +215,7 @@ module.exports = {
     updateCourse,
     getFeaturedCourse,
     getCourseBySearch,
-    getCourseCount
+    getCourseCount,
+    getFreeCourse,
+    getProCourse
 }

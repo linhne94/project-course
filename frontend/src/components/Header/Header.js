@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom';
 import { navigation } from '../../data/data'
@@ -6,11 +6,12 @@ import { CgMenuRight, CgClose } from 'react-icons/cg'
 import HeaderMobile from './HeaderMobile';
 import './header.css'
 import UserManage from "./UserManage";
+import { AuthContext } from "../../context/authContext"
 function Header() {
     const [bg, setBg] = useState(false)
     const [mobileNav, setMobileNav] = useState(false)
     const [btnColor, setBtnColor] = useState(false)
-    const [loginSuccess, setLogginSuccess] = useState(true)
+    const { user, dispatch } = useContext(AuthContext);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -51,7 +52,7 @@ function Header() {
                     </ul>
                 </nav>
                 {
-                    loginSuccess ? <UserManage />
+                    user ? <UserManage />
                         : <Link to="/signin"
                             className={`${btnColor ? 'bg-[#04ddb2] hover:bg-[#03ecbe] text-white ' : 'bg-[#eef0f2] hover:bg-grey-1 text-second'}  
                                     px-[40px] py-[9px] my-1 hover:transform-[scale3d(1.05,1.05,1.05)] text-sm font-semibold  

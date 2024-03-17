@@ -33,7 +33,7 @@ function UserMenu() {
         <div className="text-gray-600">
             <ul className="text-sm">
                 <li className="hover:text-black mb-2">
-                    <a href="/" className="block py-2">Profile</a>
+                    <a href="/profile" className="block py-2">Profile</a>
                 </li>
             </ul>
             <hr className="my-2" />

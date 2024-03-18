@@ -32,7 +32,7 @@ function Header() {
         };
     }, []);
 
-    return <header className={`${bg ? 'bg-[white] py-4 lg:py-3' : 'bg-none'}  fixed left-0 w-full py-3 z-10 transition-all duration-200`}>
+    return <header className={`${bg ? 'bg-[white] shadow-md shadow-bottom  py-4 lg:py-3' : 'bg-none'}  fixed left-0 w-full py-3 z-10 transition-all duration-200`}>
         <div className="container mx-auto">
             <div className="flex justify-between items-center relative">
                 <a href="/">
@@ -53,7 +53,7 @@ function Header() {
                     </ul>
                 </nav>
                 {
-                    user  ? <UserManage />
+                    user ? <UserManage />
                         : <Link to="/signin"
                             className={`${btnColor ? 'bg-[#04ddb2] hover:bg-[#03ecbe] text-white ' : 'bg-[#eef0f2] hover:bg-grey-1 text-second'}  
                                     px-[40px] py-[9px] my-1 hover:transform-[scale3d(1.05,1.05,1.05)] text-sm font-semibold  

@@ -31,9 +31,9 @@ function App() {
       <Route path="admin" element={<AdminPage />} />
       <Route path="manageTeacher" element={<ManageTeacher />} />
       <Route path="courseConfirm" element={<CourseConfirm />} />
-      <Route path="/courses/:id" element={<CourseInfo />} />
+      <Route path="/teacher/courses/:id" element={<CourseInfo />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/collection/:id" element={<Info />} />
+      <Route path="/course/:id" element={<Info />} />
       <Route path="/collection" element={<CollectionPage />} />
       <Route path="/learningpage" element={<LearningPage />} />
 

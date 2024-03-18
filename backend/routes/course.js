@@ -2,10 +2,8 @@ var express = require('express');
 const { createCourse, getAllCourse, getCourseById, updateCourse, deleteCourseById, getCourseCount, getCourseBySearch, getFeaturedCourse, getFreeCourse, getProCourse } = require('../controllers/courseController');
 // const { verifyAdmin } = require('../utils/verifyToken');
 
-const bodyParser = require("body-parser");
 
 const courseRoute = express.Router();
-courseRoute.use(bodyParser.json());
 
 courseRoute.get("/", getAllCourse);
 courseRoute.get("/search/getFeaturedCourse", getFeaturedCourse);

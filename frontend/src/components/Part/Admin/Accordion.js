@@ -21,28 +21,33 @@ const Accordion = ({ title, content, setShowVideo, setUrl }) => {
         <div className="font-bold text-xl">{title}</div>
         <div className="text-xl ml-auto">{isActive ? "-" : "+"}</div>
       </div>
-      <div
-        className={`accordion-content ${
-          isActive ? "bg-white" : ""
-        } overflow-hidden transition-max-height duration-500 ease-in-out ${
-          isActive ? "max-h-[700px]" : "max-h-0"
-        }`}
-      >
-        <ul className="flex-col h-full">
-          {content.map((video, index) => (
-            <li
-              key={index}
-              className="py-2 flex cursor-pointer justify-between h-full"
-            >
-              <div className="flex">
-                <FaPlayCircle className="mx-2 mt-1 text-[#04ddb2]" />{" "}
+//       {isActive && (
+//         <ul className="flex-col">
+//           {content.map((data, index) => (
+//             <li key={index}>{data.title}</li>
+// =======
+//       <div
+//         className={`accordion-content ${
+//           isActive ? "bg-white" : ""
+//         } overflow-hidden transition-max-height duration-500 ease-in-out ${
+//           isActive ? "max-h-[700px]" : "max-h-0"
+//         }`}
+//       >
+//         <ul className="flex-col h-full">
+//           {content.map((video, index) => (
+//             <li
+//               key={index}
+//               className="py-2 flex cursor-pointer justify-between h-full"
+//             >
+//               <div className="flex">
+//                 <FaPlayCircle className="mx-2 mt-1 text-[#04ddb2]" />{" "}
                 
-                {video.name}
-              </div>
+//                 {video.name}
+//               </div>
           
-            </li>
-          ))}
-        </ul>
+//             </li>
+//           ))}
+//         </ul>
       </div>
     </div>
   );

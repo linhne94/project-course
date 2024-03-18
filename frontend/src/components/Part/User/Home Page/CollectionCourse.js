@@ -1,7 +1,7 @@
 import React from "react";
 import { collectionCourse } from "../../../../data/data";
 import './style.css'
-import CollectionSlide from "./CollectionSlide";
+// import CollectionSlide from "./CollectionSlide";
 function CollectionCourse() {
   const { title, subtitle, buttonText } = collectionCourse
   return <section className="section">
@@ -12,14 +12,15 @@ function CollectionCourse() {
           <p className="text-sm pb-3">{subtitle}</p>
         </div>
         <div>
-          <button className="bg-[#04ddb2] hover:bg-[#03ecbe] lg:min-w-[320px] px-8 py-[12px] my-3 hover:transform-[scale3d(1.05,1.05,1.05)] text-base font-semibold text-white rounded-[32px] transition transform hover:scale-105 capitalize">
+          <button className="bg-[#04ddb2] hover:bg-[#03ecbe] lg:min-w-[320px] px-8 py-[12px] my-3 
+          hover:transform-[scale3d(1.05,1.05,1.05)] text-base font-semibold text-white rounded-[32px] transition transform hover:scale-105 capitalize">
             {buttonText}
           </button>
         </div>
       </div>
 
       <div className="mx-auto lg:max-w-[60%] max-w-[96%]">
-        <CollectionSlide />
+        {/* <CollectionSlide /> */}
       </div>
     </div>
 

@@ -4,7 +4,7 @@ import Avatar from '../../assets/images/6298053d43cd1.jpg';
 import MenuItem from './MenuItem';
 import { menuUserItems } from "../../data/data";
 import { AuthContext } from "../../context/authContext";
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function UserMenu() {
     const { user, dispatch } = useContext(AuthContext);
@@ -33,7 +33,10 @@ function UserMenu() {
         <div className="text-gray-600">
             <ul className="text-sm">
                 <li className="hover:text-black mb-2">
-                    <a href="/profile" className="block py-2">Profile</a>
+
+                    {/* <a href="/profile" className="block py-2">Profile</a> */}
+                    <Link className="block py-2" to='/profile'>Profile</Link>
+
                 </li>
             </ul>
             <hr className="my-2" />

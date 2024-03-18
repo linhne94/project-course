@@ -24,7 +24,7 @@ function UserMenu() {
         }
     };
 
-    return <div className="absolute border border-gray-200 bg-gray-50 top-12 right-1 px-9 py-4 rounded-lg shadow-lg transition">
+    return <div className="absolute border border-gray-200 bg-gray-50 top-12 right-1 px-9 py-4 rounded-lg shadow-lg transition  min-w-40 w-64">
         <div className="flex flex-row items-center pb-4 gap-4 ">
             <img className="w-11 h-11 rounded-full" src={Avatar} alt="" />
             <h1>{user.username}</h1>
@@ -33,8 +33,10 @@ function UserMenu() {
         <div className="text-gray-600">
             <ul className="text-sm">
                 <li className="hover:text-black mb-2">
+
                     {/* <a href="/profile" className="block py-2">Profile</a> */}
                     <Link className="block py-2" to='/profile'>Profile</Link>
+
                 </li>
             </ul>
             <hr className="my-2" />

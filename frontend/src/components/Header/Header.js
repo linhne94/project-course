@@ -11,6 +11,7 @@ function Header() {
     const [bg, setBg] = useState(false)
     const [mobileNav, setMobileNav] = useState(false)
     const [btnColor, setBtnColor] = useState(false)
+    const [loginSuccess, setLogginSuccess] = useState(true)
     const { user, dispatch } = useContext(AuthContext);
 
     useEffect(() => {
@@ -31,7 +32,7 @@ function Header() {
         };
     }, []);
 
-    return <header className={`${bg ? 'bg-[white] py-4 lg:py-3' : 'bg-none'}  fixed left-0 w-full py-3 z-10 transition-all duration-200`}>
+    return <header className={`${bg ? 'bg-[white] shadow-md shadow-bottom  py-4 lg:py-3' : 'bg-none'}  fixed left-0 w-full py-3 z-10 transition-all duration-200`}>
         <div className="container mx-auto">
             <div className="flex justify-between items-center relative">
                 <a href="/">
@@ -61,8 +62,6 @@ function Header() {
                             Login
                         </Link>
                 }
-
-
                 <div className={`${mobileNav ? ' top-[64px]' : 'bottom-full'} md:hidden h-[550px] fixed left-0 w-full max-w-full backdrop-blur-lg bg-white/60 transition-all shadow-lg border-t-[1px] custom-nav-mobile `}>
                     <HeaderMobile />
                 </div>

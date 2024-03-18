@@ -27,28 +27,54 @@ export const dataCourse = {
         {
           name: "Chapter 1",
           videos: [
-            "Introduction to Fullstack",
-            "Building Frontend with React",
-            "Backend with Node.js",
+            {
+              name: "Introduction to Fullstack",
+              url: "https://www.youtube.com/embed/zoEtcR5EW08",
+            },
+            {
+              name: "Building Frontend with React",
+              url: "https://www.youtube.com/embed/pG96c3gFAfs",
+            },
+            {
+              name: "Backend with Node.js",
+              url: "https://www.youtube.com/embed/YH-E4Y3EaT4",
+            }
           ],
         },
         {
           name: "Chapter 2",
           videos: [
-            "Database Design",
-            "Authentication and Authorization",
-            "RESTful APIs",
+            {
+              name: "Database Design",
+              url: "https://www.youtube.com/embed/f5hbmw7Ba7c",
+            },
+            {
+              name: "Authentication and Authorization",
+              url: "https://www.youtube.com/embed/10j9phjctxI",
+            },
+            {
+              name: "RESTful APIs",
+              url: "https://www.youtube.com/embed/oF7isq9IjZM",
+            }
           ],
         },
         {
           name: "Chapter 3",
           videos: [
-            "Testing and Debugging",
-            "Deployment and Hosting",
-            "Continuous Integration",
+            {
+              name: "Testing and Debugging",
+              url: "https://www.youtube.com/embed/sgq7BH6WxL8",
+            },
+            {
+              name: "Deployment and Hosting",
+              url: "https://www.youtube.com/embed/utF5vj7Ljuo",
+            },
+            {
+              name: "Continuous Integration",
+              url: "https://www.youtube.com/embed/n4tS1Q5-EzY",
+            }
           ],
         },
-        // Các chương khác có thể được thêm vào đây
       ],
       objective: [
         "Learn how to interact with simple HTML, CSS and JavaScript.",
@@ -71,28 +97,54 @@ export const dataCourse = {
         {
           name: "Chapter 1",
           videos: [
-            "Introduction to Fullstack",
-            "Building Frontend with React",
-            "Backend with Node.js",
+            {
+              name: "Introduction to Fullstack",
+              url: "https://www.youtube.com/embed/zoEtcR5EW08",
+            },
+            {
+              name: "Building Frontend with React",
+              url: "https://www.youtube.com/embed/pG96c3gFAfs",
+            },
+            {
+              name: "Backend with Node.js",
+              url: "https://www.youtube.com/embed/YH-E4Y3EaT4",
+            }
           ],
         },
         {
           name: "Chapter 2",
           videos: [
-            "Database Design",
-            "Authentication and Authorization",
-            "RESTful APIs",
+            {
+              name: "Database Design",
+              url: "https://www.youtube.com/embed/f5hbmw7Ba7c",
+            },
+            {
+              name: "Authentication and Authorization",
+              url: "https://www.youtube.com/embed/10j9phjctxI",
+            },
+            {
+              name: "RESTful APIs",
+              url: "https://www.youtube.com/embed/oF7isq9IjZM",
+            }
           ],
         },
         {
           name: "Chapter 3",
           videos: [
-            "Testing and Debugging",
-            "Deployment and Hosting",
-            "Continuous Integration",
+            {
+              name: "Testing and Debugging",
+              url: "https://www.youtube.com/embed/sgq7BH6WxL8",
+            },
+            {
+              name: "Deployment and Hosting",
+              url: "https://www.youtube.com/embed/utF5vj7Ljuo",
+            },
+            {
+              name: "Continuous Integration",
+              url: "https://www.youtube.com/embed/n4tS1Q5-EzY",
+            }
           ],
         },
-        // Các chương khác có thể được thêm vào đây
       ],
       objective: [
         "Learn how to interact with simple HTML, CSS and JavaScript.",
@@ -115,28 +167,54 @@ export const dataCourse = {
         {
           name: "Chapter 1",
           videos: [
-            "Introduction to Fullstack",
-            "Building Frontend with React",
-            "Backend with Node.js",
+            {
+              name: "Introduction to Fullstack",
+              url: "https://www.youtube.com/embed/zoEtcR5EW08",
+            },
+            {
+              name: "Building Frontend with React",
+              url: "https://www.youtube.com/embed/pG96c3gFAfs",
+            },
+            {
+              name: "Backend with Node.js",
+              url: "https://www.youtube.com/embed/YH-E4Y3EaT4",
+            }
           ],
         },
         {
           name: "Chapter 2",
           videos: [
-            "Database Design",
-            "Authentication and Authorization",
-            "RESTful APIs",
+            {
+              name: "Database Design",
+              url: "https://www.youtube.com/embed/f5hbmw7Ba7c",
+            },
+            {
+              name: "Authentication and Authorization",
+              url: "https://www.youtube.com/embed/10j9phjctxI",
+            },
+            {
+              name: "RESTful APIs",
+              url: "https://www.youtube.com/embed/oF7isq9IjZM",
+            }
           ],
         },
         {
           name: "Chapter 3",
           videos: [
-            "Testing and Debugging",
-            "Deployment and Hosting",
-            "Continuous Integration",
+            {
+              name: "Testing and Debugging",
+              url: "https://www.youtube.com/embed/sgq7BH6WxL8",
+            },
+            {
+              name: "Deployment and Hosting",
+              url: "https://www.youtube.com/embed/utF5vj7Ljuo",
+            },
+            {
+              name: "Continuous Integration",
+              url: "https://www.youtube.com/embed/n4tS1Q5-EzY",
+            }
           ],
         },
-        // Các chương khác có thể được thêm vào đây
       ],
       objective: [
         "Learn how to interact with simple HTML, CSS and JavaScript.",
@@ -159,28 +237,54 @@ export const dataCourse = {
         {
           name: "Chapter 1",
           videos: [
-            "Introduction to Fullstack",
-            "Building Frontend with React",
-            "Backend with Node.js",
+            {
+              name: "Introduction to Fullstack",
+              url: "https://www.youtube.com/embed/zoEtcR5EW08",
+            },
+            {
+              name: "Building Frontend with React",
+              url: "https://www.youtube.com/embed/pG96c3gFAfs",
+            },
+            {
+              name: "Backend with Node.js",
+              url: "https://www.youtube.com/embed/YH-E4Y3EaT4",
+            }
           ],
         },
         {
           name: "Chapter 2",
           videos: [
-            "Database Design",
-            "Authentication and Authorization",
-            "RESTful APIs",
+            {
+              name: "Database Design",
+              url: "https://www.youtube.com/embed/f5hbmw7Ba7c",
+            },
+            {
+              name: "Authentication and Authorization",
+              url: "https://www.youtube.com/embed/10j9phjctxI",
+            },
+            {
+              name: "RESTful APIs",
+              url: "https://www.youtube.com/embed/oF7isq9IjZM",
+            }
           ],
         },
         {
           name: "Chapter 3",
           videos: [
-            "Testing and Debugging",
-            "Deployment and Hosting",
-            "Continuous Integration",
+            {
+              name: "Testing and Debugging",
+              url: "https://www.youtube.com/embed/sgq7BH6WxL8",
+            },
+            {
+              name: "Deployment and Hosting",
+              url: "https://www.youtube.com/embed/utF5vj7Ljuo",
+            },
+            {
+              name: "Continuous Integration",
+              url: "https://www.youtube.com/embed/n4tS1Q5-EzY",
+            }
           ],
         },
-        // Các chương khác có thể được thêm vào đây
       ],
       objective: [
         "Learn how to interact with simple HTML, CSS and JavaScript.",
@@ -203,28 +307,54 @@ export const dataCourse = {
         {
           name: "Chapter 1",
           videos: [
-            "Introduction to Fullstack",
-            "Building Frontend with React",
-            "Backend with Node.js",
+            {
+              name: "Introduction to Fullstack",
+              url: "https://www.youtube.com/embed/zoEtcR5EW08",
+            },
+            {
+              name: "Building Frontend with React",
+              url: "https://www.youtube.com/embed/pG96c3gFAfs",
+            },
+            {
+              name: "Backend with Node.js",
+              url: "https://www.youtube.com/embed/YH-E4Y3EaT4",
+            }
           ],
         },
         {
           name: "Chapter 2",
           videos: [
-            "Database Design",
-            "Authentication and Authorization",
-            "RESTful APIs",
+            {
+              name: "Database Design",
+              url: "https://www.youtube.com/embed/f5hbmw7Ba7c",
+            },
+            {
+              name: "Authentication and Authorization",
+              url: "https://www.youtube.com/embed/10j9phjctxI",
+            },
+            {
+              name: "RESTful APIs",
+              url: "https://www.youtube.com/embed/oF7isq9IjZM",
+            }
           ],
         },
         {
           name: "Chapter 3",
           videos: [
-            "Testing and Debugging",
-            "Deployment and Hosting",
-            "Continuous Integration",
+            {
+              name: "Testing and Debugging",
+              url: "https://www.youtube.com/embed/sgq7BH6WxL8",
+            },
+            {
+              name: "Deployment and Hosting",
+              url: "https://www.youtube.com/embed/utF5vj7Ljuo",
+            },
+            {
+              name: "Continuous Integration",
+              url: "https://www.youtube.com/embed/n4tS1Q5-EzY",
+            }
           ],
         },
-        // Các chương khác có thể được thêm vào đây
       ],
       objective: [
         "Learn how to interact with simple HTML, CSS and JavaScript.",

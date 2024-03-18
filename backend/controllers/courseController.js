@@ -57,7 +57,14 @@ const getCourseById = async (req, res) => {
 
     try {
         const getCourseById = await Course.findById(id)
-            .populate()
+            .populate({
+                path: 'chapters',
+                populate: {
+                    path: 'lessons',
+                    model: 'Lesson' // Tên của mô hình Lesson
+                }
+            })
+            .populate('categories')
 
         res.status(200).json({
             success: true,

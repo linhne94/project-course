@@ -8,19 +8,37 @@ import Header from "../../Header/Header";
 import Accordion from "../Admin/Accordion";
 import TeacherInfo from "./TeacherInfo";
 import InfoHeader from "./InfoHeader";
+import { getCourseById } from "../../../fetchData/dataCourse";
 const Info = () => {
   const [rating, setRating] = useState(0);
   const [display, setDisplay] = useState(false);
+  const [course, setCourse] = useState({});
+  const { id } = useParams();
+
+  const getCourse = async () => {
+    const res = await getCourseById(id);
+
+    if (res) {
+      setCourse(res.data.data);
+      console.log(res.data)
+
+    }
+  }
+
+  // useEffect(() => {
+  //   getCourse()
+  // }, [id)
+
+  useEffect(() => getCourse, [id])
 
   const stars = [];
   for (let i = 0; i < 5; i++) {
     stars.push(
       <FaStar
         key={i}
-        className={`h-6 w-6 ${
-          i < rating ? "text-yellow-500" : "text-gray-300"
-        }`}
-        onClick={() => setRating(i + 1)} 
+        className={`h-6 w-6 ${i < rating ? "text-yellow-500" : "text-gray-300"
+          }`}
+        onClick={() => setRating(i + 1)}
       />
     );
   }
@@ -37,8 +55,7 @@ const Info = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const { id } = useParams();
-  const course = dataCourse.course.find((course) => course.id === parseInt(id));
+  // const course = dataCourse.course.find((course) => course.id === parseInt(id));
 
   if (!course) {
     return <div>Course unavailable.</div>;
@@ -46,15 +63,15 @@ const Info = () => {
   return (
     <div className="bg-white">
       <div className={`${display ? 'flex' : 'hidden'}`}>
-         <InfoHeader/>
+        <InfoHeader course={course} />
       </div>
-     
+
       <div className="relative mx-auto p-6 bg-cyan-950 text-white flex rounded-md shadow-md">
         <div>
           <h1 className="font-bold text-green-500">
-            Category: {course.category}
+            {/* Category: {course.category} */}
           </h1>
-          <h1 className="text-3xl font-bold my-8">{course.name}</h1>
+          <h1 className="text-3xl font-bold my-8">{course.title}</h1>
           <p className="text-white mb-4">{course.description}</p>
           <h2>Created By : Teacher</h2>
           <div className="flex items-center space-x-1">{stars}</div>
@@ -62,24 +79,27 @@ const Info = () => {
             What will you learn from this course:
           </h1>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 my-5">
-            {course.objective.map((obj, index) => (
+            {/* {course.map((obj, index) => (
               <li key={index} className="flex items-center">
                 <span className="mr-2">&#10004;</span>
                 {obj}
               </li>
-            ))}
+            ))} */}
           </ul>
         </div>
         <div className="w-1/4 h-auto sm:max-h-auto absolute right-6 p-2 my-8 border-solid border-2 border-green bg-white shadow-2xl sm:fixed text-black">
-          <img src={course.image.type} className="w-full" alt=""></img>
+          <img src={course.imgUrl} className="w-full" alt=""></img>
           <h1 className="font-bold text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-4xl my-6 mx-2 px-3">
-            {course.price}đ
+
+            <div>
+              {course.price}đ
+            </div>
           </h1>
-  
-            <p className="font-bold px-6">
-              This course contains:
-            </p>
-          <p className="font-normal px-6">{course.chapters.length} chapters</p>
+
+          <p className="font-bold px-6">
+            This course contains:
+          </p>
+          {/* <p className="font-normal px-6">{course.chapters.length} chapters</p> */}
           <p className="font-normal px-6">Beginner Level</p>
           <p className="font-normal px-6">Flexible Schedule</p>
           <p className="font-normal px-6">Earn Degree Credit</p>
@@ -117,7 +137,10 @@ const Info = () => {
           {course.chapters && course.chapters.length > 0 ? (
             <ul className="list-disc pl-6">
               {course.chapters.map((items, index) => (
-                <Accordion title={items.name} content={items.videos} />
+                <div key={index}>
+
+                  <Accordion title={items.title} content={items.lessons} />
+                </div>
               ))}
             </ul>
           ) : (
@@ -127,10 +150,11 @@ const Info = () => {
       </div>
 
       <TeacherInfo />
-      
-      
+
+
     </div>
   );
 };
 
 export default Info;
+// 

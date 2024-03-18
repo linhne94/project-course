@@ -65,7 +65,7 @@ const CourseInfo = () => {
           <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl my-6 mx-2 px-3">
             {course.price}đ
           </h1>
-          {course.chapters && course.chapters.length > 0  ? (
+          {course.chapters && course.chapters.length > 0 ? (
             <p className="font-bold px-6">
               This course contains: {course.chapters.length} chapters
             </p>
@@ -105,7 +105,7 @@ const CourseInfo = () => {
           <p>No videos available for this course.</p>
         )}
       </div>
- 
+
     </div>
   );
 };

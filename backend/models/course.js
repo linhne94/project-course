@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Currency = mongoose.SchemaTypes.Decimal128;
 
 const courseSchema = new mongoose.Schema({
     title: {
@@ -12,7 +11,7 @@ const courseSchema = new mongoose.Schema({
         // required: true
     },
     price: {
-        type: Currency,
+        type: Number,
         min: 0
     },
     categories: [{

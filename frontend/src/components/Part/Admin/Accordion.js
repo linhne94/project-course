@@ -14,8 +14,8 @@ const Accordion = ({ title, content }) => {
       </div>
       {isActive && (
         <ul className="flex-col">
-          {content.map((video, index) => (
-            <li key={index}>{video}</li>
+          {content.map((data, index) => (
+            <li key={index}>{data.title}</li>
           ))}
         </ul>
       )}

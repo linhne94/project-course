@@ -1,6 +1,9 @@
 import React from "react";
 
-const EditProfile = () => {
+const EditProfile = (props) => {
+
+  const { user } = props;
+
   return (
     <div className="w-full max-w-4xl">
       <h1 className="text-2xl font-semibold px-7 ">Edit Profile</h1>
@@ -124,7 +127,7 @@ const EditProfile = () => {
           />
         </div>
         <div className="flex items-center justify-between">
-        <button className="bg-[#04ddb2] hover:bg-[#03ecbe] text-white  w-full flex justify-center
+          <button className="bg-[#04ddb2] hover:bg-[#03ecbe] text-white  w-full flex justify-center
          px-[40px] py-[9px] my-1 hover:transform-[scale3d(1.05,1.05,1.05)] text-sm font-semibold  rounded-full  backdrop-blur-md transition  
          transform hover:scale-105  md:flex">Save</button>
         </div>

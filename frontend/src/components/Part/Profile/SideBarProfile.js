@@ -26,7 +26,7 @@ const SideBarProfile = () => {
   return (
     <div>
       <Header/>
-      <div className="flex items-center justify-center h-screen pt-10">
+      <div className="flex items-center justify-center h-screen pt-7">
         <div
           className= "bg-[#04ddb2] w-[17.1%] p-5 ml-20 pt-8 h-5/6 max-h-screen relative duration-300 rounded-xl"
         >

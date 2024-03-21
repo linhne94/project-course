@@ -5,6 +5,7 @@ import Features from "../components/Part/User/Home Page/Features";
 import CollectionCourse from "../components/Part/User/Home Page/CollectionCourse";
 import Product from "../components/Part/User/Home Page/Course";
 import Footer from "../components/Footer/Footer";
+import BoxChatPage from "../components/Part/User/Box Chat/BoxChatPage";
 
 function HomePage() {
   return <>
@@ -15,6 +16,7 @@ function HomePage() {
       <CollectionCourse />
       <Product />
       <Footer />
+      <BoxChatPage />
     </div>
   </>;
 }

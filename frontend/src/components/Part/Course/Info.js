@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { dataCourse } from "../../../data/dataCourse";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
@@ -8,12 +8,15 @@ import Header from "../../Header/Header";
 import Accordion from "../Admin/Accordion";
 import TeacherInfo from "./TeacherInfo";
 import InfoHeader from "./InfoHeader";
-import { getCourseById } from "../../../fetchData/dataCourse";
+import { enrollCourseFree, getCourseById } from "../../../fetchData/dataCourse";
+import { AuthContext } from "../../../context/authContext";
 const Info = () => {
   const [rating, setRating] = useState(0);
   const [display, setDisplay] = useState(false);
   const [course, setCourse] = useState({});
+  const { user } = useContext(AuthContext)
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const getCourse = async () => {
     const res = await getCourseById(id);
@@ -60,6 +63,20 @@ const Info = () => {
   if (!course) {
     return <div>Course unavailable.</div>;
   }
+
+  const handleEnroll = async () => {
+    const res = await enrollCourseFree(user._id, id)
+    if (res.status === 200) {
+      alert(res.data.message)
+      navigate("/")
+      return
+    }
+    if (res) {
+      // console.log(res)
+      alert(res.data.message)
+    }
+  }
+
   return (
     <div className="bg-white">
       <div className={`${display ? 'flex' : 'hidden'}`}>
@@ -88,11 +105,13 @@ const Info = () => {
           </ul>
         </div>
         <div className="w-1/4 h-auto sm:max-h-auto absolute right-6 p-2 my-8 border-solid border-2 border-green bg-white shadow-2xl sm:fixed text-black">
-          <img src={course.imgUrl} className="w-full" alt=""></img>
+          <img src={course.imageUrl} className="w-full" alt=""></img>
           <h1 className="font-bold text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-4xl my-6 mx-2 px-3">
 
             <div>
-              {course.price}đ
+              {
+                course.isFree ? "Free" : course.price + "đ"
+              }
             </div>
           </h1>
 
@@ -104,7 +123,7 @@ const Info = () => {
           <p className="font-normal px-6">Flexible Schedule</p>
           <p className="font-normal px-6">Earn Degree Credit</p>
           <div className="my-5 flex items-center justify-around">
-            <button
+            {/* <button
               className="rounded bg-white border border-black w-1/3 h-14 relative transition duration-300
             mx-4
             "
@@ -115,8 +134,8 @@ const Info = () => {
               >
                 Add To Cart
               </div>
-            </button>
-            <button
+            </button> */}
+            {/* <button
               className="rounded bg-white border border-black w-1/3 h-14 relative transition duration-300
             mx-4
             "
@@ -125,9 +144,40 @@ const Info = () => {
                 className="bg-black text-white absolute w-full h-full right-1 bottom-2 rounded pt-3
               transition delay-150 duration-300 ease-in-out hover:translate-y-2 hover:translate-x-1 opacity-90 hover:scale-100 "
               >
-                Buy Now
+                {
+                  course.isFree ? "Enroll" : "Buy Now"
+                }
               </div>
-            </button>
+            </button> */}
+
+            {
+              course.isFree
+                ? <button
+                  onClick={handleEnroll}
+                  className="rounded bg-white border border-black w-1/3 h-14 relative transition duration-300
+            mx-4
+            "
+                >
+                  <div
+                    className="bg-black text-white absolute w-full h-full right-1 bottom-2 rounded pt-3
+              transition delay-150 duration-300 ease-in-out hover:translate-y-2 hover:translate-x-1 opacity-90 hover:scale-100 "
+                  >
+                    Enroll
+                  </div>
+                </button>
+                : <button
+                  className="rounded bg-white border border-black w-1/3 h-14 relative transition duration-300
+          mx-4
+          "
+                >
+                  <div
+                    className="bg-black text-white absolute w-full h-full right-1 bottom-2 rounded pt-3
+            transition delay-150 duration-300 ease-in-out hover:translate-y-2 hover:translate-x-1 opacity-90 hover:scale-100 "
+                  >
+                    Buy now
+                  </div>
+                </button>
+            }
           </div>
         </div>
       </div>

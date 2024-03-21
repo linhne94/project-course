@@ -26,7 +26,7 @@ function CourseNor({ courseFreeData }) {
                         key={index}
                         className="cursor-pointer flex flex-col border fea-item border-gray-300 rounded-2xl w-[90%] course-item hover:shadow-lg">
                         <div className="rounded-t-lg ">
-                            <img class="object-cover rounded-t-lg w-full h-auto" src={data.imageUrl} alt="" />
+                            <img class="object-cover rounded-t-lg w-full h-[200px]" src={data.imageUrl} alt="" />
                         </div>
                         <div className="m-5 ">
                             <h1 className="text-primary text-lg font-semibold">{data.title}</h1>

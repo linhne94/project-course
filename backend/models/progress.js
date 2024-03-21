@@ -31,6 +31,17 @@ const progressSchema = new mongoose.Schema({
     }
 });
 
+// Middleware to update progressPercentage before saving
+progressSchema.pre('save', function (next) {
+    // Calculate progress percentage logic here
+    // For example, you can calculate based on completed lessons and total lessons
+    const totalLessons = this.lessonsProgress.length;
+    const completedLessons = this.lessonsProgress.filter(lesson => lesson.completed).length;
+    this.progressPercentage = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
+
+    next();
+});
+
 const Progress = mongoose.model('Progress', progressSchema);
 
 module.exports = Progress;

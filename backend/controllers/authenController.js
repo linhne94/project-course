@@ -1,7 +1,8 @@
 var User = require('../models/user');
 var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken')
-
+var jwt = require('jsonwebtoken');
+const Course = require('../models/course');
+const { addProgress } = require('./progressController')
 const register = async (req, res) => {
     try {
 
@@ -122,7 +123,7 @@ const getUserById = async (req, res) => {
     const id = req.params.id;
 
     try {
-        const getUserById = await User.findById(id)
+        const getUserById = await User.findById(id).populate('coursesEnrolled')
 
         res.status(200).json({
             success: true,
@@ -142,7 +143,7 @@ const updateUser = async (req, res) => {
 
     try {
         const updateUser = await User.findByIdAndUpdate(id, {
-            $set: req.body
+            $set: { ...req.body }
         }, { new: true })
 
         res.status(200).json({
@@ -177,6 +178,63 @@ const deleteUserById = async (req, res) => {
     }
 }
 
+const updateUserFreeCourse = async (req, res) => {
+    const idCourse = req.params.idCourse;
+    const idUser = req.params.id;
+
+    try {
+        const course = await Course.findById(idCourse).populate({
+            path: 'chapters',
+            populate: {
+                path: 'lessons',
+                model: 'Lesson' // Tên của mô hình Lesson
+            }
+        });
+        const user = await User.findById(idUser)
+
+        if (!course || !course.isFree) {
+            return res.status(400).json({
+                success: false,
+                message: "Course not found or not free."
+            });
+        }
+
+
+        const isEnrolled = user.coursesEnrolled
+            .some(enrolledCourse => enrolledCourse._id.toString() === course._id.toString());
+
+        if (isEnrolled) {
+            return res.status(400).json({
+                success: false,
+                message: "You have registered for this course."
+            });
+        }
+
+        const updateCourseOfUser = await User.findByIdAndUpdate(idUser, {
+            $push: { coursesEnrolled: course._id }
+        });
+
+        if (!updateCourseOfUser) {
+            return res.status(400).json({
+                success: false,
+                message: "Course not found or not free."
+            });
+        }
+
+        addProgress(user, course)
+        res.status(200).json({
+            success: true,
+            message: "Course successfully submitted",
+            data: updateCourseOfUser
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Failed to submit. Try again"
+        });
+    }
+};
+
 module.exports = {
     register,
     login,
@@ -184,5 +242,6 @@ module.exports = {
     deleteUserById,
     getAllUser,
     getUserById,
+    updateUserFreeCourse,
     updateUser
 }

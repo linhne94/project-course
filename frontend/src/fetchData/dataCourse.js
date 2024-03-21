@@ -24,16 +24,21 @@ const updateCourse = (id, course) => {
     return axios.put(`/course/${id}`, course);
 }
 
-const deleteEmployee = (id) => {
+const deleteCourse = (id) => {
     return axios.delete(`/course/${id}`);
+}
+
+const enrollCourseFree = (id, idCourse) => {
+    return axios.put(`/auth/${id}/course/${idCourse}`)
 }
 
 export {
     getAllCourse,
-    deleteEmployee,
+    deleteCourse,
     getCourseById,
     getCourseFree,
     getCoursePro,
     postCourse,
+    enrollCourseFree,
     updateCourse
 }

@@ -9,6 +9,7 @@ const courseRoute = require('./routes/course');
 const chapterRoute = require('./routes/chapter');
 const lessonRoute = require('./routes/lesson');
 const categoryRoute = require('./routes/category');
+const progressRoute = require('./routes/progress');
 
 
 
@@ -47,6 +48,7 @@ app.use('/api/v1/category', categoryRoute)
 app.use('/api/v1/course', courseRoute)
 app.use('/api/v1/chapter', chapterRoute)
 app.use('/api/v1/lesson', lessonRoute)
+app.use('/api/v1/progress', progressRoute)
 
 
 

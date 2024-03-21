@@ -23,7 +23,7 @@ const verifyToken = (req, res, next) => {
 }
 
 const verifyUser = (req, res, next) => {
-    verifyToken(req, res.next, () => {
+    verifyToken(req, res, () => {
         if (req.user.role === 'admin' || req.user.role === 'user') {
             next()
         }
@@ -37,7 +37,7 @@ const verifyUser = (req, res, next) => {
 }
 
 const verifyTeacher = (req, res, next) => {
-    verifyToken(req, res.next, () => {
+    verifyToken(req, res, () => {
         if (req.user.role === 'admin' || req.user.role === 'teacher') {
             next()
         }
@@ -51,7 +51,7 @@ const verifyTeacher = (req, res, next) => {
 }
 
 const verifyAdmin = (req, res, next) => {
-    verifyToken(req, res.next, () => {
+    verifyToken(req, res, () => {
         if (req.user.role === 'admin') {
             next()
         }
